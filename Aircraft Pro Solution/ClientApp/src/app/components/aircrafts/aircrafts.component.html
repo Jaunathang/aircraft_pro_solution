@@ -1,0 +1,10 @@
+<h1 class="my-4">Appareils enregistrés</h1>
+<mat-list>
+    <mat-list-item *ngFor ="let aircraft of aircrafts">
+          <h3 matLine> {{aircraft.modelName}} </h3>
+          <p matLine>
+             <span>{{aircraft.serialNumber}}</span>
+             <span > {{aircraft.registrationDate}}</span>
+          </p>
+    <mat-list-item>
+<mat-list>

@@ -1,0 +1,38 @@
+<h1 class="my-4">Enregistrer un nouvel appareil</h1>
+<form class="d-flex-sm flex-column justify-center mb-5" [formGroup]="aircraftForm" (ngSubmit)="submitForm()">
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-12 col-lg-4">
+            <mat-label>Modèle</mat-label>
+            <input matInput placeholder="Nexus 2000" formControlName="modelName" required>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-12 col-lg-4">
+            <mat-label>Numéro de série</mat-label>
+            <input matInput placeholder="43X099FG" formControlName="serialNumber" required>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-12 col-lg-4">
+            <mat-label>Numéro d'enregistrement</mat-label>
+            <input matInput placeholder="R-363223" formControlName="registrationNumber" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-12 col-lg-4">
+            <mat-label>Date d'enregistrement</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="registrationDate" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class="row">
+        <mat-slide-toggle formControlName="registrationStatus" class="mt-3">
+            L'appareil est en service
+        </mat-slide-toggle>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" class="mt-5" [disabled]="aircraftForm.status==='INVALID' || isLoading">Ajouter</button>
+</form>

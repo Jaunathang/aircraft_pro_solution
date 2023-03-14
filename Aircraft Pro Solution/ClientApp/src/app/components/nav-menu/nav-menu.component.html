@@ -10,14 +10,14 @@
       </button>
       <div class="navbar-collapse collapse d-sm-inline-flex justify-content-start ms-3" [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="mat-button d-flex flex-row align-items-center" [routerLink]="['/aircrafts']">
+          <li [routerLinkActive]="['link-active']">
+            <a mat-button class="d-flex flex-row align-items-center" [routerLink]="['/aircrafts']">
               <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="flight" class="me-1"></mat-icon>
               <span>Aircrafts</span>
             </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="mat-button d-flex flex-row align-items-center" [routerLink]="['/add']">
+          <li [routerLinkActive]="['link-active']">
+            <a mat-button class="d-flex flex-row align-items-center" [routerLink]="['/add']">
               <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="add" class="me-1"></mat-icon>
               <span>Add</span>
             </a>
