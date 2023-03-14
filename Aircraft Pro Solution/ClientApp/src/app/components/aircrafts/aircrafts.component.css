@@ -1,0 +1,12 @@
+.align-right {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.greenElement {
+    color: green;
+}
+
+.redElement {
+    color: red;
+}
