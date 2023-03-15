@@ -6,8 +6,11 @@ import { RouterModule } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +25,8 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { ViewComponent } from './view/view.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,9 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
     FetchDataComponent,
     AircraftsComponent,
     AddComponent,
-    FooterComponent
+    FooterComponent,
+    ViewComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,6 +48,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'aircrafts', component: AircraftsComponent },
+      { path: 'aircrafts/:id', component: ViewComponent },
       { path: 'add', component: AddComponent },
     ]),
     BrowserAnimationsModule,
@@ -53,6 +61,9 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatCardModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

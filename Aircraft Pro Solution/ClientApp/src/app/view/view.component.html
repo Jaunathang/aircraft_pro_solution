@@ -1,0 +1,27 @@
+<div class="row" *ngIf="aircraft">
+    <mat-card class="example-card">
+        <mat-card-title>{{aircraft.modelName}}</mat-card-title>
+        <mat-card-subtitle [ngClass]="aircraft.registrationStatus ? 'greenElement' : 'redElement'">
+            {{aircraft.registrationStatus ? "En service" : "Remisé"}}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>
+                <b>Numéro de série: </b>
+                <span>{{aircraft.serialNumber}}</span>
+            </p>
+            <p>
+                <b>Numéro d'enregistrement: </b>
+                <span>{{aircraft.registrationNumber}}</span>
+            </p>
+            <p>
+                <b>Date d'enregistrement: </b>
+                <span>{{aircraft.registrationDate}}</span>
+            </p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions class="p-2">
+            <a mat-raised-button color="primary">Modifier</a>
+            <button mat-raised-button color="warn" (click)="openDialog('0ms', '0ms')">Supprimer</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

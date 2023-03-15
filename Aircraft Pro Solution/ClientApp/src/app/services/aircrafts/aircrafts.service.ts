@@ -28,4 +28,12 @@ export class AircraftsService {
     return this.http.post<Aircraft>(this.baseAircrafApitUrl, newAircraft);
   }
 
+  get(id: number): Observable<Aircraft> {
+    return this.http.get<Aircraft>(`${this.baseAircrafApitUrl}/${id}`);
+  }
+
+  delete(id: number): Observable<Aircraft> {
+    return this.http.delete<Aircraft>(`${this.baseAircrafApitUrl}/${id}`);
+  }
+
 }
