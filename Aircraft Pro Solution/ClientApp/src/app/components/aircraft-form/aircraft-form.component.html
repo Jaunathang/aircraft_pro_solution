@@ -1,5 +1,8 @@
-<h1 class="my-4">Enregistrer un nouvel appareil</h1>
+<h1 class="my-4">
+    {{isNew ? "Enregistrer un nouvel appareil" : "Modifier un appareil"}}
+</h1>
 <form class="d-flex-sm flex-column justify-center mb-5" [formGroup]="aircraftForm" (ngSubmit)="submitForm()">
+    <input type="hidden" formControlName="id">
     <div class="row">
         <mat-form-field appearance="fill" class="col-12 col-lg-4">
             <mat-label>Modèle</mat-label>
@@ -34,5 +37,7 @@
         </mat-slide-toggle>
     </div>
 
-    <button mat-raised-button color="primary" type="submit" class="mt-5" [disabled]="aircraftForm.status==='INVALID' || isLoading">Ajouter</button>
+    <button mat-raised-button color="primary" type="submit" class="mt-5" [disabled]="aircraftForm.status==='INVALID' || isLoading">
+        {{isNew ? "Ajouter" : "Enregistrer"}}
+    </button>
 </form>

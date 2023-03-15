@@ -20,7 +20,7 @@
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions class="p-2">
-            <a mat-raised-button color="primary">Modifier</a>
+            <button mat-raised-button color="primary" (click)="redirectToEditPage()">Modifier</button>
             <button mat-raised-button color="warn" (click)="openDialog('0ms', '0ms')">Supprimer</button>
         </mat-card-actions>
     </mat-card>

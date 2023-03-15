@@ -16,24 +16,28 @@ interface AircraftNoId extends Omit<Aircraft, "id">{}
 })
 export class AircraftsService {
 
-  baseAircrafApitUrl: string = environment.baseUrl + 'api/aircrafts';
+  baseAircrafApiUrl: string = environment.baseUrl + 'api/aircrafts';
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Aircraft[]> {
-    return this.http.get<Aircraft[]>(this.baseAircrafApitUrl);
-  }
-
-  add(newAircraft: AircraftNoId): Observable<Aircraft> {
-    return this.http.post<Aircraft>(this.baseAircrafApitUrl, newAircraft);
+    return this.http.get<Aircraft[]>(this.baseAircrafApiUrl);
   }
 
   get(id: number): Observable<Aircraft> {
-    return this.http.get<Aircraft>(`${this.baseAircrafApitUrl}/${id}`);
+    return this.http.get<Aircraft>(`${this.baseAircrafApiUrl}/${id}`);
+  }
+
+  add(newAircraft: AircraftNoId): Observable<Aircraft> {
+    return this.http.post<Aircraft>(this.baseAircrafApiUrl, newAircraft);
+  }
+
+  update(updatedAircraft: Aircraft): Observable<Aircraft> {
+    return this.http.put<Aircraft>(`${this.baseAircrafApiUrl}/${updatedAircraft.id}`, updatedAircraft)
   }
 
   delete(id: number): Observable<Aircraft> {
-    return this.http.delete<Aircraft>(`${this.baseAircrafApitUrl}/${id}`);
+    return this.http.delete<Aircraft>(`${this.baseAircrafApiUrl}/${id}`);
   }
 
 }

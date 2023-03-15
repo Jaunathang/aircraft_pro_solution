@@ -27,5 +27,4 @@ export class AircraftsComponent implements OnInit {
         }
       });
   }
-
 }
