@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Aircraft_Pro_Solution.Models;
 
-/* A little class to populate the database a little bit if empty. */
+/* A class to populate the database a little bit if empty. */
 
 public static class SeedData
 {
